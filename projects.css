@@ -1,0 +1,128 @@
+.box {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 90%;             
+    max-width: 800px;         
+    margin: 50px auto;
+    padding: 20px;
+    border: 2px solid #ccc;
+    flex-wrap: wrap;
+    box-sizing: border-box; 
+    color: white; 
+    background-color: rgba(75, 71, 71, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+    border: none;
+    font-size: 20px;
+    animation-name: zoomOut;
+    animation-duration: 0.6s;
+    animation-fill-mode: both; 
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+html, body {
+  margin: 0;
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(10, 10, 50) 0%, rgb(60, 10, 60) 100%);
+    z-index: -1; /* Make sure it's behind all content */
+    pointer-events: none; /* Allows clicks through the canvas */
+}
+
+
+button {
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: 20px 20px;
+    border-radius: 28px;
+    border: none;
+    margin: 15px;
+    color: white;
+    background-color: rgba(240, 238, 238, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+}
+
+button:hover {
+    box-shadow: 0 5px #010000;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+}
+
+img {
+    max-width: 100%;         
+    height: auto;
+    margin: 10px;
+    box-sizing: border-box;
+    box-shadow: 4.0px 8.0px 8.0px hsl(0deg 0% 0% / 0.38);
+}
+
+img:hover {
+    transform: scale(1.05);  
+    transition: transform 0.3s ease; 
+}
+
+.image-pair {
+    display: flex;           
+    flex-direction: row;      
+    flex-wrap: wrap;           
+    gap: 20px;            
+    align-items: center;     
+    justify-content: center; 
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.image-pair img {
+    max-width: 550px;         
+    width: 100%;
+    height: auto;
+    flex: 1 1 300px;          
+    box-sizing: border-box;
+}
+
+.image-hover {
+    position: relative;     
+}
+
+.hover-text {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.image-hover:hover .hover-text {
+    opacity: 1;             
+}
+
+
+

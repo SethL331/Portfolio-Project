@@ -1,0 +1,124 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: center;
+    color:white;
+}
+
+html, body {
+  margin: 0;
+}
+
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(to bottom, rgb(10, 10, 50) 0%, rgb(60, 10, 60) 100%);
+  z-index: -1; /* Make sure it's behind all content */
+  pointer-events: none; /* Allows clicks through the canvas */
+}
+
+hr {
+    width: 50%;
+    opacity: 0;
+    height: 2px;
+    background-color: white;
+    transform: translateX(30px);
+    animation: fadeInRight 2s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(500px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+header {
+    align-items: center;
+    text-align: center;
+    margin: 50px;
+}
+
+.text { 
+    animation-name: text;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    font-size: 50px;
+    color: white;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+.text {
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 2s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 25px;
+    animation-name: zoomOut;
+    animation-duration: 0.6s;
+    animation-fill-mode: both;
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+button:hover {
+    box-shadow: 0 5px #010000;
+    transform: scale(1.05); 
+    transition: all 0.2s ease-in-out;
+    transform: translateY(4px)
+}
+
+.about,
+.projects,
+.contact  {
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 28px;
+    margin: 15px;
+    color: white;
+    background-color: rgba(240, 238, 238, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+    border: none;
+    
+}
+
+img {
+    margin-right: 40px;
+    width: 45px;
+    height: 45px;
+}

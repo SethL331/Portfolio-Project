@@ -1,0 +1,170 @@
+body {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+html, body {
+  margin: 0;
+}
+
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, rgb(10, 10, 50) 0%, rgb(60, 10, 60) 100%);
+    z-index: -1; /* Make sure it's behind all content */
+    pointer-events: none; /* Allows clicks through the canvas */
+}
+
+.box {
+    display: flex;
+    font-size: 20px;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 800px;            
+    margin: 50px auto;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    flex-wrap: wrap; 
+    color: white;
+    background-color: rgba(75, 71, 71, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+    animation-name: zoomOut;
+    animation-duration: 0.6s;
+    animation-fill-mode: both;    
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+img {
+    opacity: 1;
+	animation-name: fadeInOpacity;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-in;
+	animation-duration: 1s;
+}
+
+@keyframes fadeInOpacity {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
+button {
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 28px;
+    margin: 15px;
+    border: none;
+    color: white;
+    background-color: rgba(240, 238, 238, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+}
+
+
+button:hover {
+    box-shadow: 0 5px #010000;
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
+}
+
+.box2 {
+    font-size: 20px;
+    max-width: 800px;
+    margin: 50px auto 0 auto; 
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    background-color: rgba(75, 71, 71, 0.4);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+    margin-bottom: 10px;
+    animation-name: zoomOut;
+    animation-duration: 0.6s;
+    animation-fill-mode: both; 
+}
+
+@keyframes zoomOut {
+    from {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.skills {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.text2 {
+    text-align: center;
+}
+.skills .text {
+    max-width: 400px;
+}
+
+.text button {
+    margin-left: 100px;
+}
+
+.skills img {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+    
+button {
+    font-size: 20px;
+    display: inline-flex;
+    align-items: center;
+    padding: 20px 20px;
+    border-radius: 28px;
+    margin: 15px;
+}
+
+img {
+    width: 300px;
+    height: 300px;
+    margin-right: 20px;
+}
+
+.box img {
+    max-width: 100%;
+    height: auto;
+    width: 300px;
+    margin-right: 20px;
+}
+
+.box .text {
+    flex: 1 200px;
+}
