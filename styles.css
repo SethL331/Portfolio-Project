@@ -101,7 +101,8 @@ button:hover {
 
 .about,
 .projects,
-.contact  {
+.contact,
+.sources  {
     font-size: 50px;
     display: flex;
     align-items: center;

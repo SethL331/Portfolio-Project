@@ -62,12 +62,13 @@ function draw(time, canvas, ctx) {
     particles[index] = moveParticle(particle, canvas, time);
   })
 
+  // Clears the canvas
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
+  // Draws the particles
   particles.forEach((particle) => {
     drawParticle(particle, canvas, ctx);
   })
-
+  // Schedules next frame
   requestAnimationFrame((time) => draw(time, canvas, ctx));
 }
 
@@ -88,7 +89,7 @@ function initializeCanvas() {
 
 function startAnimation() {
   const [canvas, ctx] = initializeCanvas();
-
+  // Create a bunch of particles
   for (let i = 0; i < NUM_PARTICLES; i++) {
     particles.push(createParticle(canvas));
   }
@@ -96,6 +97,7 @@ function startAnimation() {
   requestAnimationFrame((time) => draw(time, canvas, ctx));
 };
 
+// Start animation when document is loaded
 (function () {
   if (document.readyState !== 'loading') {
     startAnimation();
