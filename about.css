@@ -126,6 +126,19 @@ button:hover {
     flex-wrap: wrap; 
 }
 
+.socials {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap; 
+}
+
+.github img {
+    border-radius: 200px;
+}
+
 .text2 {
     text-align: center;
 }
@@ -141,6 +154,19 @@ button:hover {
     width: 100px;
     height: 100px;
     margin-right: 20px;
+}
+
+.socials img {
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.socials img:hover {
+    box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
+    transform: scale(1.05);
+    transition: all 0.1s ease-in-out;
 }
     
 button {
