@@ -15,7 +15,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   background: linear-gradient(to bottom, rgb(10, 10, 50) 0%, rgb(60, 10, 60) 100%);
-  z-index: -1; /* Make sure it's behind all content */
+  z-index: -1; /* Makes sure it's behind all content */
   pointer-events: none; /* Allows clicks through the canvas */
 }
 
@@ -115,7 +115,6 @@ button:hover {
     backdrop-filter: blur(2px);
     box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
     border: none;
-    
 }
 
 img {

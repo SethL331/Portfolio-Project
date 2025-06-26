@@ -1,3 +1,4 @@
+// @ts-ignore
 function normalPool(o){var r=0;do{var a=Math.round(normal({mean:o.mean,dev:o.dev}));if(a<o.pool.length&&a>=0)return o.pool[a];r++}while(r<100)}function randomNormal(o){if(o=Object.assign({mean:0,dev:1,pool:[]},o),Array.isArray(o.pool)&&o.pool.length>0)return normalPool(o);var r,a,n,e,l=o.mean,t=o.dev;do{r=(a=2*Math.random()-1)*a+(n=2*Math.random()-1)*n}while(r>=1);return e=a*Math.sqrt(-2*Math.log(r)/r),t*e+l}
 
 const NUM_PARTICLES = 600;
@@ -74,13 +75,19 @@ function draw(time, canvas, ctx) {
 
 function initializeCanvas() {
   let canvas = document.getElementById('particle-canvas');
+  // @ts-ignore
   canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+  // @ts-ignore
   canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+  // @ts-ignore
   let ctx = canvas.getContext("2d");
 
   window.addEventListener('resize', () => {
+    // @ts-ignore
     canvas.width = canvas.offsetWidth * window.devicePixelRatio;
+    // @ts-ignore
     canvas.height = canvas.offsetHeight * window.devicePixelRatio;
+    // @ts-ignore
     ctx = canvas.getContext("2d");
   })
 
@@ -89,7 +96,7 @@ function initializeCanvas() {
 
 function startAnimation() {
   const [canvas, ctx] = initializeCanvas();
-  // Create a bunch of particles
+  // Creates a bunch of particles
   for (let i = 0; i < NUM_PARTICLES; i++) {
     particles.push(createParticle(canvas));
   }
@@ -97,7 +104,7 @@ function startAnimation() {
   requestAnimationFrame((time) => draw(time, canvas, ctx));
 };
 
-// Start animation when document is loaded
+// Starts animation when document is loaded
 (function () {
   if (document.readyState !== 'loading') {
     startAnimation();
