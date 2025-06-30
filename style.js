@@ -2,11 +2,12 @@
 function normalPool(o){var r=0;do{var a=Math.round(normal({mean:o.mean,dev:o.dev}));if(a<o.pool.length&&a>=0)return o.pool[a];r++}while(r<100)}function randomNormal(o){if(o=Object.assign({mean:0,dev:1,pool:[]},o),Array.isArray(o.pool)&&o.pool.length>0)return normalPool(o);var r,a,n,e,l=o.mean,t=o.dev;do{r=(a=2*Math.random()-1)*a+(n=2*Math.random()-1)*n}while(r>=1);return e=a*Math.sqrt(-2*Math.log(r)/r),t*e+l}
 
 const NUM_PARTICLES = 600;
-const PARTICLE_SIZE = 0.5; 
-const SPEED = 20000; 
+const PARTICLE_SIZE = 0.5; // View heights
+const SPEED = 20000; // Milliseconds
 
-let particles = [];
+let particles = []; // holds all particles
 
+// Returns a random number between low and high
 function rand(low, high) {
   return Math.random() * (high - low) + low;
 }
@@ -35,8 +36,8 @@ function moveParticle(particle, canvas, time) {
   const progress = ((time - particle.startTime) % particle.duration) / particle.duration;
   return {
     ...particle,
-    x: progress,
-    y: ((Math.sin(progress * particle.arc) * particle.amplitude) + particle.offsetY),
+    x: progress, // Moves left to right across the canvas
+    y: ((Math.sin(progress * particle.arc) * particle.amplitude) + particle.offsetY), // Bounces up/down
   };
 }
 
@@ -59,6 +60,7 @@ function drawParticle(particle, canvas, ctx) {
 }
 
 function draw(time, canvas, ctx) {
+  // Move particles
   particles.forEach((particle, index) => {
     particles[index] = moveParticle(particle, canvas, time);
   })

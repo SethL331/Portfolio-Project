@@ -49,24 +49,20 @@ html, body {
     pointer-events: none; /* Allows clicks through the canvas */
 }
 
-
 button {
-    font-size: 20px;
-    display: inline-flex;
-    align-items: center;
-    padding: 20px 20px;
+    font-size: 40px;
+    padding: 20px 30px;
     border-radius: 28px;
-    border: none;
     margin: 15px;
+    border: none;
     color: white;
-    background-color: rgba(240, 238, 238, 0.4);
+    background-color: rgba(137, 133, 133, 0.4);
     -webkit-backdrop-filter: blur(2px);
     backdrop-filter: blur(2px);
     box-shadow: 5.9px 11.8px 11.8px hsl(0deg 0% 0% / 0.32);
 }
 
 button:hover {
-    box-shadow: 0 5px #010000;
     transform: scale(1.05);
     transition: all 0.1s ease-in-out;
 }
@@ -124,5 +120,11 @@ img:hover {
     opacity: 1;             
 }
 
-
-
+.nav-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin: 30px 0 20px 0;
+    flex-wrap: wrap;
+}
