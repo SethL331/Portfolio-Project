@@ -79,6 +79,7 @@ button:hover {
 }
 
 input {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: white;
     width: 70%;
     font-size: 20px;
@@ -89,6 +90,7 @@ input {
 }
 
 textarea {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: white;
     width: 70%;
     font-size: 20px;
